@@ -1,0 +1,159 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #faf5ff;
+  --foreground: #2e1065;
+  --card: #ffffff;
+  --card-foreground: #2e1065;
+  --popover: #ffffff;
+  --popover-foreground: #2e1065;
+  --primary: #7c3aed;
+  --primary-foreground: #faf5ff;
+  --secondary: #f3e8ff;
+  --secondary-foreground: #581c87;
+  --muted: #ede9fe;
+  --muted-foreground: #6b21a8;
+  --accent: #a855f7;
+  --accent-foreground: #faf5ff;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #ddd6fe;
+  --input: #ddd6fe;
+  --ring: #a855f7;
+  --chart-1: #7c3aed;
+  --chart-2: #a855f7;
+  --chart-3: #c084fc;
+  --chart-4: #d8b4fe;
+  --chart-5: #581c87;
+  --radius: 0.75rem;
+  --paper: #fdf4ff;
+  --paper-foreground: #3b0764;
+  --glow: #c084fc;
+}
+
+.dark {
+  --background: #1a0533;
+  --foreground: #f3e8ff;
+  --card: #2e1065;
+  --card-foreground: #f3e8ff;
+  --popover: #2e1065;
+  --popover-foreground: #f3e8ff;
+  --primary: #a855f7;
+  --primary-foreground: #faf5ff;
+  --secondary: #3b0764;
+  --secondary-foreground: #e9d5ff;
+  --muted: #3b0764;
+  --muted-foreground: #c4b5fd;
+  --accent: #c084fc;
+  --accent-foreground: #1a0533;
+  --border: #581c87;
+  --input: #581c87;
+  --ring: #c084fc;
+  --chart-1: #a855f7;
+  --chart-2: #c084fc;
+  --chart-3: #d8b4fe;
+  --chart-4: #7c3aed;
+  --chart-5: #e9d5ff;
+  --paper: #2e1065;
+  --paper-foreground: #e9d5ff;
+  --glow: #a855f7;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback', sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --font-serif: 'Caveat', cursive;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-paper: var(--paper);
+  --color-paper-foreground: var(--paper-foreground);
+  --color-glow: var(--glow);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Paper texture overlay */
+.paper-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Tape effect */
+.tape {
+  position: relative;
+}
+.tape::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 80px;
+  height: 24px;
+  background: rgba(168, 85, 247, 0.2);
+  border-radius: 2px;
+  z-index: 10;
+}
+
+/* Torn paper edge */
+.torn-edge {
+  --mask: conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) 50%/20px 100%;
+  mask: var(--mask);
+  -webkit-mask: var(--mask);
+}
+
+/* Pokédex glow */
+.pokedex-glow {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 60px rgba(168, 85, 247, 0.1);
+}
+
+.dark .pokedex-glow {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5), 0 0 60px rgba(168, 85, 247, 0.2);
+}
+
+/* Scrapbook shadow */
+.scrapbook-shadow {
+  box-shadow: 4px 4px 0px rgba(124, 58, 237, 0.15), 8px 8px 20px rgba(124, 58, 237, 0.08);
+}
+
+.dark .scrapbook-shadow {
+  box-shadow: 4px 4px 0px rgba(168, 85, 247, 0.2), 8px 8px 20px rgba(168, 85, 247, 0.1);
+}
