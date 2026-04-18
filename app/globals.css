@@ -157,3 +157,35 @@
 .dark .scrapbook-shadow {
   box-shadow: 4px 4px 0px rgba(168, 85, 247, 0.2), 8px 8px 20px rgba(168, 85, 247, 0.1);
 }
+
+/* Sparkle particles */
+@keyframes sparkle-fall-fade {
+  0% {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100px) translateX(var(--tx, 0));
+  }
+}
+
+.sparkle-particle {
+  position: fixed;
+  pointer-events: none;
+  cursor: auto;
+}
+
+.sparkle-particle::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #a855f7;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: sparkle-fall-fade 2s ease-in-out forwards;
+}
+
+.dark .sparkle-particle::before {
+  background: #c084fc;
+}
