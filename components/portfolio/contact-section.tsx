@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
-import { Mail, MapPin, Send, Instagram, ExternalLink } from "lucide-react"
+import { Send, Instagram, ExternalLink } from "lucide-react"
 import { WavyLine, HeartDoodle, StarDoodle } from "./doodles"
 
 const userEmail = "vanesapaco.a@gmail.com"
@@ -58,29 +58,6 @@ export function ContactSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
-            <div className="bg-card rounded-2xl p-6 border border-border scrapbook-shadow">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-primary/10 flex-shrink-0">
-                  <Mail className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground">Correo Electrónico</h3>
-                  <p className="text-sm text-muted-foreground mt-1">vanesapaco.a@gmail.com</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-card rounded-2xl p-6 border border-border scrapbook-shadow">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-primary/10 flex-shrink-0">
-                  <MapPin className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-foreground">Ubicación</h3>
-                  <p className="text-sm text-muted-foreground mt-1">Bolivia, Cochabamba</p>
-                </div>
-              </div>
-            </div>
-
             {/* Social links */}
             <div className="flex gap-3">
               <a
