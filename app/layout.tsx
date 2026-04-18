@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono, Caveat } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/next"
+import { ParticleEffect } from "@/components/particle-effect"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={`${_geist.variable} ${_geistMono.variable} ${_caveat.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
+          <ParticleEffect />
         </ThemeProvider>
         <Analytics />
       </body>
