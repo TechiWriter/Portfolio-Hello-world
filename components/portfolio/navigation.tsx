@@ -8,7 +8,6 @@ import { Moon, Sun, Menu, X } from "lucide-react"
 const navItems = [
   { label: "Inicio", href: "#hero" },
   { label: "Acerca de", href: "#about" },
-  { label: "Educación", href: "#education" },
   { label: "Habilidades", href: "#skills" },
   { label: "Herramientas", href: "#tools" },
   { label: "Contacto", href: "#contact" },
