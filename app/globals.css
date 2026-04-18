@@ -159,7 +159,7 @@
 }
 
 /* Sparkle particles */
-@keyframes fall-fade {
+@keyframes sparkle-fall-fade {
   0% {
     opacity: 1;
     transform: translateY(0) translateX(0);
@@ -170,29 +170,22 @@
   }
 }
 
-.star-particle {
-  position: absolute;
-  width: 14px;
-  height: 14px;
+.sparkle-particle {
+  position: fixed;
   pointer-events: none;
-  background: transparent;
-  border: 1.5px solid #a855f7;
-  /* 4 pointed star */
-  clip-path: polygon(
-    50% 0%,
-    60% 40%,
-    100% 50%,
-    60% 60%,
-    50% 100%,
-    40% 60%,
-    0% 50%,
-    40% 40%
-  );
-  box-shadow: 0 0 6px #a855f7;
-  animation: fall-fade 0.9s ease-out forwards;
+  cursor: auto;
 }
 
-.dark .star-particle {
-  border-color: #c084fc;
-  box-shadow: 0 0 6px #c084fc;
+.sparkle-particle::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #a855f7;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: sparkle-fall-fade 2s ease-in-out forwards;
+}
+
+.dark .sparkle-particle::before {
+  background: #c084fc;
 }
