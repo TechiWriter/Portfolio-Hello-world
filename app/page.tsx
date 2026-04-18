@@ -3,7 +3,6 @@
 import { Navigation } from "@/components/portfolio/navigation"
 import { HeroSection } from "@/components/portfolio/hero-section"
 import { AboutSection } from "@/components/portfolio/about-section"
-import { EducationSection } from "@/components/portfolio/education-section"
 import { SkillsSection } from "@/components/portfolio/skills-section"
 import { SkillDeckSection } from "@/components/portfolio/skill-deck-section"
 import { ToolsSection } from "@/components/portfolio/tools-section"
@@ -17,7 +16,6 @@ export default function PortfolioPage() {
       <Navigation />
       <HeroSection />
       <AboutSection />
-      <EducationSection />
       <SkillsSection />
       <SkillDeckSection />
       <ToolsSection />

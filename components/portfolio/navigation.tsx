@@ -8,7 +8,6 @@ import { Moon, Sun, Menu, X } from "lucide-react"
 const navItems = [
   { label: "Inicio", href: "#hero" },
   { label: "Acerca de", href: "#about" },
-  { label: "Educación", href: "#education" },
   { label: "Habilidades", href: "#skills" },
   { label: "Herramientas", href: "#tools" },
   { label: "Contacto", href: "#contact" },
@@ -53,7 +52,7 @@ export function Navigation() {
           onClick={() => handleNavClick("#hero")}
           className="font-serif text-2xl text-primary font-bold tracking-tight"
         >
-          Explora mi laboratorio creativo :3
+          Portafolio Vane
         </button>
 
         {/* Desktop nav */}
