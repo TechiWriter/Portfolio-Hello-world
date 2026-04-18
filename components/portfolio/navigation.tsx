@@ -53,7 +53,7 @@ export function Navigation() {
           onClick={() => handleNavClick("#hero")}
           className="font-serif text-2xl text-primary font-bold tracking-tight"
         >
-          Explora mi laboratorio creativo :3
+          Portafolio Vane
         </button>
 
         {/* Desktop nav */}

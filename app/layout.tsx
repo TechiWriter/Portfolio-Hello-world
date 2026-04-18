@@ -9,11 +9,11 @@ const _geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono
 const _caveat = Caveat({ subsets: ["latin"], variable: "--font-caveat" })
 
 export const metadata: Metadata = {
-  title: "Creative Portfolio | Scrapbook Style",
-  description: "A creative portfolio with a scrapbook collage aesthetic, featuring illustration, character design, and graphic design work.",
+  title: "Portafolio Vane",
+  description: "Portafolio Vane – diseño, creatividad y proyectos digitales",
   generator: "v0.app",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
 }
 
