@@ -67,10 +67,10 @@ export function AboutSection() {
           >
             <div className="bg-card rounded-2xl p-6 md:p-8 scrapbook-shadow border border-border">
               <p className="text-foreground leading-relaxed text-base md:text-lg">
-                Soy una creativa multidisciplinaria apasionada por la tecnología. Con más de 2 años de experiencia creando, gestionando y estructurando contenidos en entornos de Tecnología y Saas.
+                Soy una creativa multidisciplinaria apasionada por la tecnología. Con más de 2 años de experiencia creando, gestionando y estructurando contenidos en entornos de Tecnología, Saas y Telecomunicaciones.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed text-base">
-                Cuando no estoy creando contenido, me encontrarás apoyando comunidades de tecnología o explorando nuevas herramientas digitales para mejorar productividad y automatización.
+                Cuando no estoy creando contenido, me dedico a apoyar comunidades tecnológicas y a explorar nuevas herramientas digitales para optimizar la productividad y la automatización.
               </p>
             </div>
 

@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
-import { Send, Instagram, ExternalLink } from "lucide-react"
+import { Send } from "lucide-react"
 import { WavyLine, HeartDoodle, StarDoodle } from "./doodles"
 
 const userEmail = "vanesapaco.a@gmail.com"
@@ -58,23 +58,7 @@ export function ContactSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
-            {/* Social links */}
-            <div className="flex gap-3">
-              <a
-                href="#"
-                className="flex-1 flex items-center justify-center gap-2 p-3 rounded-xl bg-card border border-border text-sm font-medium text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
-              >
-                <Instagram className="h-4 w-4" />
-                Instagram
-              </a>
-              <a
-                href="#"
-                className="flex-1 flex items-center justify-center gap-2 p-3 rounded-xl bg-card border border-border text-sm font-medium text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors"
-              >
-                <ExternalLink className="h-4 w-4" />
-                Behance
-              </a>
-            </div>
+
           </motion.div>
 
           {/* Contact form */}
