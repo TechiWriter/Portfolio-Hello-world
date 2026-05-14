@@ -29,8 +29,8 @@ export const skillsData = [
   { skill: "Content Strategy", level: 85 },
   { skill: "Storytelling & Writing", level: 80 },
   { skill: "AI & Productivity Tools", level: 85 },
-  { skill: "Community Leadership", level: 70 },
-  { skill: "Animation & Motion Design", level: 60 },
+  { skill: "Community Leadership", level: 80 },
+  { skill: "Animación", level: 75 },
   { skill: "Systems & Frameworks", level: 70 },
   { skill: "Growth & Analytics", level: 80 },
 ]

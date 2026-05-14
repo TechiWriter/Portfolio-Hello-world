@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Zap, Eye, Sparkles, TrendingUp, BarChart3, Zap as Zap2, Gift, BookOpen } from "lucide-react"
+import { Zap, Eye } from "lucide-react"
 import { WavyLine } from "./doodles"
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from "recharts"
 
@@ -13,7 +13,6 @@ interface SkillDeck {
   year: number
   description: string
   stats: Array<{ subject: string; value: number }>
-  icon: React.ReactNode
 }
 
 // Personaliza estos datos según tus necesidades
@@ -31,7 +30,6 @@ const skillDeckData: SkillDeck[] = [
       { subject: "Composición", value: 85 },
       { subject: "Color", value: 90 },
     ],
-    icon: <Sparkles className="w-10 h-10 text-primary" />,
   },
   {
     id: 2,
@@ -46,7 +44,6 @@ const skillDeckData: SkillDeck[] = [
       { subject: "Composición", value: 88 },
       { subject: "Color", value: 90 },
     ],
-    icon: <TrendingUp className="w-10 h-10 text-primary" />,
   },
   {
     id: 3,
@@ -61,7 +58,6 @@ const skillDeckData: SkillDeck[] = [
       { subject: "Composición", value: 95 },
       { subject: "Color", value: 85 },
     ],
-    icon: <BarChart3 className="w-10 h-10 text-primary" />,
   },
   {
     id: 4,
@@ -76,7 +72,6 @@ const skillDeckData: SkillDeck[] = [
       { subject: "Composición", value: 88 },
       { subject: "Color", value: 88 },
     ],
-    icon: <Zap className="w-10 h-10 text-primary" />,
   },
   {
     id: 5,
@@ -91,7 +86,6 @@ const skillDeckData: SkillDeck[] = [
       { subject: "Composición", value: 88 },
       { subject: "Color", value: 88 },
     ],
-    icon: <Zap2 className="w-10 h-10 text-primary" />,
   },
   {
     id: 6,
@@ -106,7 +100,6 @@ const skillDeckData: SkillDeck[] = [
       { subject: "Composición", value: 82 },
       { subject: "Color", value: 82 },
     ],
-    icon: <TrendingUp className="w-10 h-10 text-primary" />,
   },
   {
     id: 7,
@@ -121,7 +114,6 @@ const skillDeckData: SkillDeck[] = [
       { subject: "Composición", value: 91 },
       { subject: "Color", value: 91 },
     ],
-    icon: <Gift className="w-10 h-10 text-primary" />,
   },
   {
     id: 8,
@@ -136,7 +128,6 @@ const skillDeckData: SkillDeck[] = [
       { subject: "Composición", value: 84 },
       { subject: "Color", value: 84 },
     ],
-    icon: <BookOpen className="w-10 h-10 text-primary" />,
   },
 ]
 
@@ -172,7 +163,7 @@ function SkillCard({ deck }: { deck: SkillDeck }) {
           {/* Icon */}
           <div className="flex justify-center mb-4 flex-1">
             <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-              {deck.icon}
+              <Zap className="w-10 h-10 text-primary" />
             </div>
           </div>
 
@@ -251,7 +242,7 @@ function SkillCard({ deck }: { deck: SkillDeck }) {
 
           {/* Evolution button */}
           <button className="w-full py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2 mb-3">
-            Ver
+            Ver Evolución
             <span>&gt;</span>
           </button>
 
@@ -265,50 +256,6 @@ function SkillCard({ deck }: { deck: SkillDeck }) {
     </motion.div>
   )
 }
-
-export function SkillDeckSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
-  return (
-    <section id="skill-deck" className="relative py-24 md:py-32 paper-texture">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-mono text-primary">SKILL DECK LAB</span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Mis Proyectos <span className="font-serif italic text-primary">Destacados</span>
-          </h2>
-          <WavyLine className="mx-auto mt-3 text-primary/40" />
-          <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Cada proyecto es una criatura especializada con sus propias habilidades y áreas de expertise. Toca cualquier tarjeta para revelar su radar de estadísticas.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-max">
-          {skillDeckData.map((deck, index) => (
-            <motion.div
-              key={deck.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.08 }}
-            >
-              <SkillCard deck={deck} />
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 
 export function SkillDeckSection() {
   const ref = useRef(null)
