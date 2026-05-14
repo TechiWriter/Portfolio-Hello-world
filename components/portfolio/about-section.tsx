@@ -70,7 +70,7 @@ export function AboutSection() {
                 Soy una creativa multidisciplinaria apasionada por la tecnología. Con más de 2 años de experiencia creando, gestionando y estructurando contenidos en entornos de Tecnología, Saas y Telecomunicaciones.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed text-base">
-                Cuando no estoy creando contenido, me dedico a apoyar comunidades tecnológicas y a explorar nuevas herramientas digitales para optimizar la productividad y la automatización.
+                Cuando no estoy creando contenido, me enfoco en impulsar comunidades tecnológicas y explorar nuevas herramientas digitales que potencien la productividad y la automatización.
               </p>
             </div>
 
