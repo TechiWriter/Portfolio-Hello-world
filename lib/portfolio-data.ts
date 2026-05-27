@@ -199,3 +199,43 @@ export const projectsData: Project[] = [
 ]
 
 export const categories: ProjectCategory[] = ["Todos", "Ilustración", "Branding", "UI/UX", "Diseño de Personajes"]
+
+export interface Video {
+  id: number
+  title: string
+  category: string
+  thumbnail: string
+  youtubeUrl: string
+  description: string
+  color: string
+}
+
+export const videosData: Video[] = [
+  {
+    id: 1,
+    title: "Notion para marketer",
+    category: "Strategy",
+    thumbnail: "/video-cover-1.jpg",
+    youtubeUrl: "https://youtube.com",
+    description: "Learn How create a complelling content strategies in Notion.",
+    color: "#7c3aed",
+  },
+  {
+    id: 2,
+    title: "Viral Growth Framework",
+    category: "Marketing",
+    thumbnail: "/video-cover-2.png",
+    youtubeUrl: "https://youtube.com",
+    description: "Discover proven frameworks to achieve viral growth and scale your brand presence across social media.",
+    color: "#a855f7",
+  },
+  {
+    id: 3,
+    title: "IA's Generativas",
+    category: "Design",
+    thumbnail: "/video-cover-3.jpg",
+    youtubeUrl: "https://youtube.com",
+    description: "Why some AIs are not suitable for copying and understanding natural language, while others create from scratch and have high-quality results.",
+    color: "#c084fc",
+  },
+]

@@ -199,17 +199,13 @@ export function PokedexSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-mono text-primary">STACK CREATIVO</span>
-          </div>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
             Skill Deck {" "}
             <span className="font-serif italic text-primary">Lab</span>
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Mi ecosistema de capacidades,como certificaciones, reconocimientos y liderazgo. Toca cualquier tarjeta para revelar sus estadísticas completas y ruta de evolución.
+            Mi ecosistema de capacidades, como certificaciones, reconocimientos y liderazgo. Toca cualquier tarjeta para revelar sus estadísticas completas y ruta de evolución.
           </p>
         </motion.div>
 

@@ -46,17 +46,17 @@ export function ContactSection() {
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-md mx-auto">
-            ¿Tienes un proyecto en mente? Creemos algo asombroso juntos.
+            Contáctame para proyectos y asesorías personalizadas.
           </p>
         </motion.div>
 
-        <div className="flex justify-center">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 relative">
           {/* Contact form */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="w-full max-w-md"
+            className="w-full max-w-md relative z-10"
           >
             <div className="bg-card rounded-2xl p-6 md:p-8 border border-border scrapbook-shadow">
               {submitted ? (
@@ -128,7 +128,30 @@ export function ContactSection() {
               )}
             </div>
           </motion.div>
+
+          {/* Sinko Peso cat illustration - Desktop Background */}
+          <div className="hidden lg:block absolute -right-40 -bottom-24 pointer-events-none z-0">
+            <img
+              src="/sinko-peso.png"
+              alt="Sinko Peso"
+              className="w-80 h-auto"
+            />
+          </div>
         </div>
+
+        {/* Sinko Peso cat illustration - Mobile (below form) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="flex lg:hidden items-center justify-center mt-12"
+        >
+          <img
+            src="/sinko-peso.png"
+            alt="Sinko Peso"
+            className="w-56 h-auto"
+          />
+        </motion.div>
       </div>
 
       {/* Decorative doodles */}

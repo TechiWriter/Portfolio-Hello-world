@@ -1,14 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowUp, Heart, Instagram, ExternalLink, Mail } from "lucide-react"
+import { Heart, Instagram, ExternalLink, Mail } from "lucide-react"
 import { StarDoodle } from "./doodles"
 
 export function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
-
   return (
     <footer className="relative py-12 border-t border-border">
       <div className="mx-auto max-w-6xl px-4 lg:px-8">
@@ -21,7 +17,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Social icons */}
+          {/* Social icons and Contact button */}
           <div className="flex items-center gap-3">
             <a
               href="#"
@@ -44,29 +40,21 @@ export function Footer() {
             >
               <Mail className="h-4 w-4" />
             </a>
+            <a
+              href="/links"
+              className="px-4 py-2 rounded-xl bg-accent text-accent-foreground font-semibold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+            >
+              Contactarme
+            </a>
           </div>
-
-          {/* Back to top */}
-          <motion.button
-            onClick={scrollToTop}
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 text-primary text-sm font-medium hover:bg-primary/20 transition-colors"
-          >
-            <ArrowUp className="h-4 w-4" />
-            Volver al Inicio
-          </motion.button>
         </div>
 
         {/* Bottom line */}
-        <div className="mt-8 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="mt-8 pt-6 border-t border-border flex items-center justify-center">
           <p className="text-xs text-muted-foreground">
             Diseñado con{" "}
             <Heart className="inline h-3 w-3 text-primary" />{" "}
             y un poco de vibecoding :3
-          </p>
-          <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} Portafolio Vanesa Paco Alvarez. Todos los derechos reservados.
           </p>
         </div>
       </div>
