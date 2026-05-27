@@ -92,18 +92,6 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
-          <button
-            onClick={() => handleScroll("#projects")}
-            className="px-8 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
-          >
-            Explorar portafolio
-          </button>
-          <button
-            onClick={() => handleScroll("#pokedex")}
-            className="px-8 py-3 rounded-xl bg-card text-card-foreground font-semibold text-sm border-2 border-primary/30 hover:border-primary/60 hover:-translate-y-0.5 transition-all duration-200 scrapbook-shadow"
-          >
-            Stack creativo
-          </button>
         </motion.div>
 
 

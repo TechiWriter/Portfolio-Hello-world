@@ -3,10 +3,9 @@
 import { Navigation } from "@/components/portfolio/navigation"
 import { HeroSection } from "@/components/portfolio/hero-section"
 import { AboutSection } from "@/components/portfolio/about-section"
-import { SkillsSection } from "@/components/portfolio/skills-section"
-import { SkillDeckSection } from "@/components/portfolio/skill-deck-section"
-import { ToolsSection } from "@/components/portfolio/tools-section"
-import { PokedexSection } from "@/components/portfolio/pokedex-section"
+import { CreatorDashboardSection } from "@/components/portfolio/creator-dashboard-section"
+import { VideosSection } from "@/components/portfolio/videos-section"
+import { BlogSection } from "@/components/portfolio/blog-section"
 import { ContactSection } from "@/components/portfolio/contact-section"
 import { Footer } from "@/components/portfolio/footer"
 
@@ -16,10 +15,9 @@ export default function PortfolioPage() {
       <Navigation />
       <HeroSection />
       <AboutSection />
-      <SkillsSection />
-      <SkillDeckSection />
-      <ToolsSection />
-      <PokedexSection />
+      <CreatorDashboardSection />
+      <VideosSection />
+      <BlogSection />
       <ContactSection />
       <Footer />
     </main>

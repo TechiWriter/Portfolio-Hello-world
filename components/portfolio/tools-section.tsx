@@ -1,76 +1,179 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { motion, useInView, AnimatePresence } from "framer-motion"
+import { useRef, useState } from "react"
 import { toolsData } from "@/lib/portfolio-data"
 import { WavyLine } from "./doodles"
+import { ChevronDown } from "lucide-react"
 
-function CircularProgress({
+interface ToolCategory {
+  name: string
+  tools: typeof toolsData
+  color: string
+  description: string
+}
+
+const toolCategories: ToolCategory[] = [
+  {
+    name: "AI Design Tools",
+    description: "Herramientas de diseño potenciadas con IA",
+    color: "#7c3aed",
+    tools: toolsData.filter((t) => ["Adobe Express", "Canva", "Photoshop", "Illustrator"].includes(t.name)),
+  },
+  {
+    name: "Video Tools & Animation",
+    description: "Herramientas de video y edición profesional",
+    color: "#a855f7",
+    tools: toolsData.filter((t) => ["Adobe Premiere", "After Effects", "Capcut"].includes(t.name)),
+  },
+  {
+    name: "IA Tools Aplicadas",
+    description: "Aplicaciones de IA en creatividad",
+    color: "#c084fc",
+    tools: toolsData.filter((t) => ["Figma"].includes(t.name)),
+  },
+]
+
+function ToolCard({
+  name,
   level,
   icon,
-  name,
   delay,
   inView,
 }: {
+  name: string
   level: number
   icon: string
-  name: string
   delay: number
   inView: boolean
 }) {
-  const radius = 38
-  const circumference = 2 * Math.PI * radius
-  const offset = circumference - (level / 100) * circumference
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20, scale: 0.8 }}
+      animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{ duration: 0.5, delay, type: "spring", stiffness: 300, damping: 25 }}
+      whileHover={{ scale: 1.08, y: -5 }}
+      className="group"
+    >
+      <div className="relative p-5 rounded-2xl border-2 border-primary/30 bg-card hover:border-primary/60 transition-all duration-300 overflow-hidden">
+        {/* Holographic shimmer effect */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20"
+          animate={{
+            x: [-100, 100],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        {/* Background glow */}
+        <motion.div
+          className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+          style={{
+            boxShadow: "inset 0 0 20px rgba(168, 85, 247, 0.1)",
+          }}
+        />
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center text-center gap-3">
+          <motion.div
+            className="text-3xl font-bold"
+            animate={{
+              y: [0, -8, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay,
+            }}
+          >
+            {icon}
+          </motion.div>
+
+          <div>
+            <p className="font-semibold text-foreground text-sm mb-2">{name}</p>
+            
+            {/* Animated progress bar */}
+            <div className="w-full h-2 rounded-full bg-secondary overflow-hidden border border-primary/20">
+              <motion.div
+                className="h-full bg-gradient-to-r from-primary via-accent to-primary"
+                initial={{ width: 0 }}
+                animate={inView ? { width: `${level}%` } : { width: 0 }}
+                transition={{ duration: 1.2, delay: delay + 0.2, ease: "easeOut" }}
+              />
+            </div>
+            
+            <p className="text-xs text-muted-foreground font-mono mt-2">{level}%</p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
+function CategorySection({
+  category,
+  index,
+  inView,
+}: {
+  category: ToolCategory
+  index: number
+  inView: boolean
+}) {
+  const [isOpen, setIsOpen] = useState(index === 0)
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay }}
-      className="flex flex-col items-center gap-3 group"
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="border-2 border-primary/20 rounded-2xl overflow-hidden bg-card hover:border-primary/40 transition-all"
     >
-      <div className="relative w-24 h-24 md:w-28 md:h-28">
-        <svg className="w-full h-full -rotate-90" viewBox="0 0 88 88">
-          {/* Background circle */}
-          <circle
-            cx="44"
-            cy="44"
-            r={radius}
-            fill="none"
-            stroke="var(--secondary)"
-            strokeWidth="6"
-          />
-          {/* Progress circle */}
-          <motion.circle
-            cx="44"
-            cy="44"
-            r={radius}
-            fill="none"
-            stroke="var(--primary)"
-            strokeWidth="6"
-            strokeLinecap="round"
-            strokeDasharray={circumference}
-            initial={{ strokeDashoffset: circumference }}
-            animate={inView ? { strokeDashoffset: offset } : { strokeDashoffset: circumference }}
-            transition={{ duration: 1.2, delay: delay + 0.2, ease: "easeOut" }}
-          />
-        </svg>
-        {/* Center content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-lg font-bold text-primary font-mono">{icon}</span>
-          <motion.span
-            className="text-xs font-mono text-muted-foreground mt-0.5"
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ delay: delay + 0.8 }}
-          >
-            {level}%
-          </motion.span>
+      {/* Category header */}
+      <motion.button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full p-5 flex items-center justify-between hover:bg-primary/5 transition-colors"
+      >
+        <div className="text-left">
+          <h3 className="font-bold text-lg text-foreground mb-1">{category.name}</h3>
+          <p className="text-sm text-muted-foreground">{category.description}</p>
         </div>
-      </div>
-      <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors text-center">
-        {name}
-      </span>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ChevronDown className="h-6 w-6 text-primary" />
+        </motion.div>
+      </motion.button>
+
+      {/* Category content */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="border-t border-primary/10"
+          >
+            <div className="p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {category.tools.map((tool, toolIndex) => (
+                <ToolCard
+                  key={tool.name}
+                  name={tool.name}
+                  level={tool.level}
+                  icon={tool.icon}
+                  delay={toolIndex * 0.05}
+                  inView={inView}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   )
 }
@@ -93,23 +196,19 @@ export function ToolsSection() {
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            El software creativo y plataformas que uso diariamente para dar vida a las ideas.
+            Mi Pokédex creativo: herramientas especializadas en diseño, video y IA que uso diariamente.
           </p>
         </motion.div>
 
-        <div className="bg-card rounded-2xl p-8 md:p-12 border border-border scrapbook-shadow">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-10">
-            {toolsData.map((tool, index) => (
-              <CircularProgress
-                key={tool.name}
-                level={tool.level}
-                icon={tool.icon}
-                name={tool.name}
-                delay={0.08 * index}
-                inView={isInView}
-              />
-            ))}
-          </div>
+        <div className="space-y-6">
+          {toolCategories.map((category, index) => (
+            <CategorySection
+              key={category.name}
+              category={category}
+              index={index}
+              inView={isInView}
+            />
+          ))}
         </div>
       </div>
     </section>
