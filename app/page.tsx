@@ -6,6 +6,7 @@ import { AboutSection } from "@/components/portfolio/about-section"
 import { CreatorDashboardSection } from "@/components/portfolio/creator-dashboard-section"
 import { VideosSection } from "@/components/portfolio/videos-section"
 import { BlogSection } from "@/components/portfolio/blog-section"
+import { DiagnosticSection } from "@/components/portfolio/diagnostic-section"
 import { ContactSection } from "@/components/portfolio/contact-section"
 import { Footer } from "@/components/portfolio/footer"
 
@@ -18,6 +19,7 @@ export default function PortfolioPage() {
       <CreatorDashboardSection />
       <VideosSection />
       <BlogSection />
+      <DiagnosticSection />
       <ContactSection />
       <Footer />
     </main>
