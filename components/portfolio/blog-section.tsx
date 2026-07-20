@@ -4,6 +4,7 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import { BookOpen, Lightbulb, TrendingUp, Sparkles, ExternalLink } from "lucide-react"
 import { WavyLine } from "./doodles"
+import { DiagnosticCollapsible } from "./diagnostic-collapsible"
 
 interface BlogPost {
   id: number
@@ -141,6 +142,16 @@ export function BlogSection() {
             <BlogCard key={post.id} post={post} index={index} />
           ))}
         </div>
+
+        {/* Diagnostic Collapsible Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-16 max-w-2xl mx-auto"
+        >
+          <DiagnosticCollapsible />
+        </motion.div>
       </div>
     </section>
   )
