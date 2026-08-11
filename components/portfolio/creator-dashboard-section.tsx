@@ -8,7 +8,7 @@ import { WavyLine, StarDoodle } from "./doodles"
 const rewards = [
   {
     name: "Platzi",
-    benefit: "Platzi Anual",
+    benefit: "+ 1 mes",
     link: "https://platzi.com/r/anipark",
   },
   {
@@ -17,8 +17,8 @@ const rewards = [
     link: "https://www.claudemarketers.com/?ref=7c2c3ffe",
   },
   {
-    name: "Kling AI",
-    benefit: "+Bonificación",
+    name: "Coder House",
+    benefit: "25% Off",
     link: "https://youtube.com",
   },
   {
