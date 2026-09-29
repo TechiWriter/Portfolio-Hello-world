@@ -213,11 +213,11 @@ export interface Video {
 export const videosData: Video[] = [
   {
     id: 1,
-    title: "Frameworks de Notion para Marketers",
+    title: "Pixar vs la industria gamer",
     category: "Strategy",
-    thumbnail: "/video-cover-1.jpg",
+    thumbnail: "/images/crisis-vs-cultura-creativa.jpg",
     youtubeUrl: "https://youtube.com",
-    description: "Learn How create a complelling content strategies in Notion.",
+    description: "Crisis vs cultura creativa: análisis crítico de dos visiones con Sangre, sudor y píxeles y Creativity, Inc.",
     color: "#7c3aed",
   },
   {
@@ -233,7 +233,7 @@ export const videosData: Video[] = [
     id: 3,
     title: "Libros para creativos y marketers",
     category: "Design",
-    thumbnail: "/images/crisis-vs-cultura-creativa.jpg",
+    thumbnail: "/video-cover-3.jpg",
     youtubeUrl: "https://youtube.com",
     description: "Why some AIs are not suitable for copying and understanding natural language, while others create from scratch and have high-quality results.",
     color: "#c084fc",
