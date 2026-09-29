@@ -231,11 +231,11 @@ export const videosData: Video[] = [
   },
   {
     id: 3,
-    title: "Libros para creativos y marketers",
+    title: "HubSpot vs Inbound Marketing",
     category: "Design",
-    thumbnail: "/video-cover-3.jpg",
+    thumbnail: "/images/hubspot-inbound.jpg",
     youtubeUrl: "https://youtube.com",
-    description: "Why some AIs are not suitable for copying and understanding natural language, while others create from scratch and have high-quality results.",
+    description: "La evolución de una estrategia: qué fue primero, el concepto de inbound marketing o la plataforma creada para automatizarlo.",
     color: "#c084fc",
   },
   {
