@@ -222,11 +222,11 @@ export const videosData: Video[] = [
   },
   {
     id: 2,
-    title: "Viral Growth Framework",
+    title: "Analizando los spots publicitarios",
     category: "Marketing",
-    thumbnail: "/video-cover-2.png",
+    thumbnail: "/images/bioshock-spot.jpg",
     youtubeUrl: "https://youtube.com",
-    description: "Discover proven frameworks to achieve viral growth and scale your brand presence across social media.",
+    description: "BioShock Infinite: análisis del spot, su público objetivo, mensaje central y estilo visual art déco + steampunk.",
     color: "#a855f7",
   },
   {
