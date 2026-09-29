@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import Image from "next/image"
 import { motion, useInView } from "framer-motion"
-import { BookOpen, Lightbulb, TrendingUp, Sparkles, ExternalLink, Code, Gamepad2, GraduationCap } from "lucide-react"
+import { BookOpen, Lightbulb, TrendingUp, Sparkles, ExternalLink, Code, Gamepad2, GraduationCap, Users } from "lucide-react"
 import { WavyLine } from "./doodles"
 
 interface BlogPost {
@@ -73,6 +73,16 @@ const blogPosts: BlogPost[] = [
     category: "Platzi",
     categoryIcon: <GraduationCap className="h-4 w-4" />,
     categoryColor: "#22c55e",
+  },
+  {
+    id: 7,
+    title: "Team Marketing en diferentes versiones",
+    description: "Los equipos de marketing con los que he crecido: distintas etapas, formas de trabajar y proyectos que construimos juntos.",
+    category: "Digital Harbor",
+    categoryIcon: <Users className="h-4 w-4" />,
+    categoryColor: "#a855f7",
+    image: "/images/team-marketing.jpg",
+    imageAlt: "Equipo de marketing de Digital Harbor haciendo gestos con las manos detrás de bolsas de regalo personalizadas",
   },
 ]
 
