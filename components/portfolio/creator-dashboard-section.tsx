@@ -147,7 +147,7 @@ export function CreatorDashboardSection() {
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Construyo contenido híbrido que combina herramientas tradicionales con IAs Generativas. Mi stack de habilidades y herramientas son enfocadas en estás áreas. 
+            Entre marketing, diseño y tecnología. El stack y las habilidades con las que construyo ideas. 
           </p>
         </motion.div>
 
