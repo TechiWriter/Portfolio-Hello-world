@@ -3,15 +3,17 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef, useEffect, useState } from "react"
-import { ExternalLink, Instagram, Linkedin, Youtube, TrendingUp } from "lucide-react"
+import { Instagram, Linkedin, Youtube } from "lucide-react"
 import { WavyLine, StarDoodle } from "./doodles"
+import { BehanceIcon, GitHubIcon, TikTokIcon } from "./brand-icons"
 
 const socialLinks = {
   behance: "https://behance.net/vanesapacoal",
   instagram: "https://instagram.com/aniipark",
   linkedin: "https://linkedin.com/in/vanesapacoalvarez",
   youtube: "https://youtube.com/@anipark.exe",
-  tiktok: "https://www.tiktok.com/@anipark.exe"
+  tiktok: "https://www.tiktok.com/@anipark.exe",
+  github: "https://github.com/TechiWriter",
 }
 
 export function AboutSection() {
@@ -157,7 +159,7 @@ export function AboutSection() {
                 className="p-3 rounded-xl bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Behance"
               >
-                <ExternalLink className="h-5 w-5" />
+                <BehanceIcon className="h-5 w-5" />
               </a>
               <a
                 href={socialLinks.instagram}
@@ -193,7 +195,16 @@ export function AboutSection() {
                 className="p-3 rounded-xl bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="TikTok"
               >
-                <TrendingUp className="h-5 w-5" />
+                <TikTokIcon className="h-5 w-5" />
+              </a>
+              <a
+                href={socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="GitHub"
+              >
+                <GitHubIcon className="h-5 w-5" />
               </a>
             </div>
           </motion.div>
