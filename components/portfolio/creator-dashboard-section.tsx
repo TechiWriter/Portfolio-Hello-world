@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
-import { Package, ExternalLink, Sparkles, Youtube, Award, Zap, Workflow, Video, Palette } from "lucide-react"
+import { Package, ExternalLink, Sparkles, Youtube, Award, Zap, Workflow, Video, Palette, PenLine } from "lucide-react"
 import { WavyLine, StarDoodle } from "./doodles"
 
 const rewards = [
@@ -55,6 +55,10 @@ const dominantAreas = [
   {
     name: "Video",
     icon: Video,
+  },
+  {
+    name: "Escritura",
+    icon: PenLine,
   },
   {
     name: "Diseño",
@@ -139,11 +143,11 @@ export function CreatorDashboardSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Skill Deck <span className="font-serif italic text-primary">Creator</span>
+            Mi Stack <span className="font-serif italic text-primary">Creator</span>
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Construyo contenido híbrido que combina herramientas tradicionales con IAs Generativas. Si eres creador y learnaholic como yo, accede a descuentos y cursos de plataformas que he testeado rigurosamente.
+            Construyo contenido híbrido que combina herramientas tradicionales con IAs Generativas. Mi stack de habilidades y herramientas son enfocadas en estás áreas. 
           </p>
         </motion.div>
 
@@ -214,14 +218,14 @@ export function CreatorDashboardSection() {
                 </div>
                 <p className="text-xs text-muted-foreground mb-3">Para la gestión y creación de contenidos aplico diferentes herramientas que aplican estas áreas.</p>
 
-                {/* Areas Grid - 4 Columns */}
-                <div className="grid grid-cols-4 gap-3">
+                {/* Areas Grid - 5 Columns */}
+                <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
                   {dominantAreas.map((area) => {
                     const IconComponent = area.icon
                     return (
                       <div
                         key={area.name}
-                        className="flex flex-col items-center justify-center p-3 rounded-lg bg-secondary/30 hover:bg-primary/10 border border-primary/10 hover:border-primary/30 transition-all group text-center"
+                        className="flex flex-col items-center justify-center p-2 rounded-lg bg-secondary/30 hover:bg-primary/10 border border-primary/10 hover:border-primary/30 transition-all group text-center"
                       >
                         <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors mb-2">
                           <IconComponent className="h-4 w-4 text-primary" />

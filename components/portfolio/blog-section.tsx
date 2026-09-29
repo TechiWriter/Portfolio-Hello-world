@@ -1,8 +1,9 @@
 "use client"
 
 import { useRef } from "react"
+import NextImage from "next/image"
 import { motion, useInView } from "framer-motion"
-import { BookOpen, Lightbulb, TrendingUp, Sparkles, ExternalLink } from "lucide-react"
+import { BookOpen, Lightbulb, TrendingUp, Sparkles, ExternalLink, Code, Gamepad2, GraduationCap, Users } from "lucide-react"
 import { WavyLine } from "./doodles"
 
 interface BlogPost {
@@ -12,32 +13,90 @@ interface BlogPost {
   category: string
   categoryIcon: React.ReactNode
   categoryColor: string
+  image?: string
+  imageAlt?: string
 }
 
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Libros para creativos y marketers",
-    description: "Una colección de ideas, diseño y pensamiento estratégico para crear mejor contenido sin saturarse.",
-    category: "Conceptos",
+    title: "Orquestación de Agentes con arquetipos y frameworks en Kiro",
+    description: "En el Meet up de “Orquestación de agentes con arquetipos y frameworks de marketing y los llevamos al ecosistema de AWS.",
+    image: "/images/orquestacion-agentes.jpg",
+    imageAlt: "Foto grupal del meetup Orquestación de agentes con el arquetipo Dream Team en el Centro de Innovación",
+    category: "AWS User Group",
     categoryIcon: <Lightbulb className="h-4 w-4" />,
     categoryColor: "#14b8a6",
   },
   {
     id: 2,
-    title: "Por qué la campaña de Duolingo funciona tan bien",
+    title: "Herramientas para el profesional del futuro",
     description: "Análisis del caos controlado: cómo el carácter del búho verde rompió todos los manuales de marca y ganó.",
-    category: "Reseñas de Campañas",
-    categoryIcon: <TrendingUp className="h-4 w-4" />,
+  image: "/images/herramientas-profesional.jpg",
+  imageAlt: "Charla Herramientas para el profesional del futuro ante estudiantes en el auditorio de la Universidad UCATEC con AIESEC",
+  category: "AIESEC",
+  categoryIcon: <TrendingUp className="h-4 w-4" />,
     categoryColor: "#06b6d4",
   },
   {
     id: 3,
-    title: "Cómo crear un tracker de contenido",
-    description: "La mayoría de los dashboards de Notion se abandonan en la primera semana. Aquí el sistema que me funciona.",
-    category: "Gadgets Notion",
+    title: "La falacia de la automatización",
+    description: "Se creía que la era de la #automatización liberaría a las personas para que puedan dedicarse a actividades como escribir poesía, componer música, dibujar y explorar otras formas de expresión artística.",
+    category: "Feria del Libro ",
     categoryIcon: <BookOpen className="h-4 w-4" />,
     categoryColor: "#7c3aed",
+    image: "/images/falacia-automatizacion.png",
+    imageAlt: "Presentando la charla La falacia de la automatización frente a una diapositiva que pregunta ¿Realidad?",
+  },
+  {
+    id: 4,
+    title: "PyDay Cochabamba",
+    description: "Mi experiencia en el PyDay Cochabamba: una jornada de charlas, talleres y comunidad alrededor de Python, datos e inteligencia artificial.",
+    category: "Python Bolivia",
+  categoryIcon: <Code className="h-4 w-4" />,
+  categoryColor: "#0ea5e9",
+  image: "/images/pyday-cochabamba.jpg",
+  imageAlt: "Foto grupal de organizadores y asistentes del PyDay Cochabamba junto a banners de PyLadies y Python Cochabamba en la Universidad UCATEC",
+  },
+  {
+    id: 5,
+    title: "3 años de la Women Game Jam",
+    description: "Tres ediciones creando videojuegos junto a mujeres y diversidades: lo que aprendimos organizando, diseñando y construyendo comunidad.",
+    category: "Women Game Jam",
+  categoryIcon: <Gamepad2 className="h-4 w-4" />,
+  categoryColor: "#ec4899",
+  image: "/images/women-game-jam.jpg",
+  imageAlt: "Equipo organizador de la Women Game Jam con coronas de papel junto a vasos morados WGJ en la mesa de registro",
+  },
+  {
+    id: 6,
+    title: "Platzi AI Academy y los retos",
+    description: "Cómo viví los retos de Platzi AI Academy: aprendizaje práctico, proyectos con IA generativa y oportunidades para empezar en tecnología.",
+    category: "Platzi",
+    categoryIcon: <GraduationCap className="h-4 w-4" />,
+    categoryColor: "#22c55e",
+  image: "/images/platzi-live.png",
+  imageAlt: "Transmisión en vivo de Platzi con el host frente a un micrófono Platzi y tres participantes en videollamada",
+  },
+  {
+    id: 7,
+    title: "Team Marketing en diferentes versiones",
+    description: "Los equipos de marketing con los que he crecido: distintas etapas, formas de trabajar y proyectos que construimos juntos.",
+    category: "Digital Harbor",
+    categoryIcon: <Users className="h-4 w-4" />,
+    categoryColor: "#a855f7",
+    image: "/images/team-marketing.jpg",
+    imageAlt: "Equipo de marketing de Digital Harbor haciendo gestos con las manos detrás de bolsas de regalo personalizadas",
+  },
+  {
+    id: 8,
+    title: "¿Qué hace un Media Partner en el EMMS?",
+    description: "Ser partner oficial permitió regalar una asesoría personalizada y un curso creativo de Domestika a la comunidad.",
+    category: "EMMS Hostinger x Doppler",
+    categoryIcon: <Sparkles className="h-4 w-4" />,
+    categoryColor: "#f59e0b",
+    image: "/images/emms-partners.png",
+    imageAlt: "Sitio web del EMMS by Doppler mostrando la sección Media Partners Starters con los logos de los partners",
   },
 ]
 
@@ -71,16 +130,28 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
           </div>
 
           {/* Icon area */}
-          <div
-            className="relative overflow-hidden h-40 flex items-center justify-center p-4"
-            style={{
-              background: `linear-gradient(135deg, ${post.categoryColor}15 0%, ${post.categoryColor}05 100%)`,
-            }}
-          >
-            <div className="text-6xl" style={{ color: post.categoryColor }}>
-              {post.categoryIcon}
+          {post.image ? (
+            <div className="relative overflow-hidden h-40">
+              <NextImage
+                src={post.image}
+                alt={post.imageAlt ?? post.title}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
-          </div>
+          ) : (
+            <div
+              className="relative overflow-hidden h-40 flex items-center justify-center p-4"
+              style={{
+                background: `linear-gradient(135deg, ${post.categoryColor}15 0%, ${post.categoryColor}05 100%)`,
+              }}
+            >
+              <div className="text-6xl" style={{ color: post.categoryColor }}>
+                {post.categoryIcon}
+              </div>
+            </div>
+          )}
 
           {/* Content */}
           <div className="p-5 flex flex-col gap-3 flex-1">
@@ -132,7 +203,7 @@ export function BlogSection() {
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Recursos, análisis y herramientas para marketers curiosos y apasionados por aprender. Toca cualquier tarjeta para leer el artículo completo.
+            Capacitaciones, Meet Ups que realice. Y parte de mi experienci en el are de tecnologia y comunidades. 
           </p>
         </motion.div>
 
