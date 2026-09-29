@@ -75,6 +75,8 @@ const blogPosts: BlogPost[] = [
     category: "Platzi",
     categoryIcon: <GraduationCap className="h-4 w-4" />,
     categoryColor: "#22c55e",
+  image: "/images/platzi-live.png",
+  imageAlt: "Transmisión en vivo de Platzi con el host frente a un micrófono Platzi y tres participantes en videollamada",
   },
   {
     id: 7,
