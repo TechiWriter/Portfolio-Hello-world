@@ -21,7 +21,9 @@ const blogPosts: BlogPost[] = [
   {
     id: 1,
     title: "Orquestación de Agentes con arquetipos y frameworks en Kiro",
-    description: "En el Meet up de “Orquestación de agentes con arquetipos y frameworks de marketing y los llevamos al ecosistema de AWS.",
+    description: "En el Meet up de “Orquestación de agentes con arquetipos y frameworks de marketing y los llevamos al ecosistema de AWS.",
+    image: "/images/orquestacion-agentes.jpg",
+    imageAlt: "Foto grupal del meetup Orquestación de agentes con el arquetipo Dream Team en el Centro de Innovación",
     category: "AWS User Group",
     categoryIcon: <Lightbulb className="h-4 w-4" />,
     categoryColor: "#14b8a6",
