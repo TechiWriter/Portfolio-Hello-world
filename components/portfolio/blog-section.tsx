@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import Image from "next/image"
 import { motion, useInView } from "framer-motion"
-import { BookOpen, Lightbulb, TrendingUp, Sparkles, ExternalLink } from "lucide-react"
+import { BookOpen, Lightbulb, TrendingUp, Sparkles, ExternalLink, Code, Gamepad2, GraduationCap } from "lucide-react"
 import { WavyLine } from "./doodles"
 
 interface BlogPost {
@@ -45,6 +45,30 @@ const blogPosts: BlogPost[] = [
     categoryColor: "#7c3aed",
     image: "/images/falacia-automatizacion.png",
     imageAlt: "Presentando la charla La falacia de la automatización frente a una diapositiva que pregunta ¿Realidad?",
+  },
+  {
+    id: 4,
+    title: "PyDay Cochabamba",
+    description: "Mi experiencia en el PyDay Cochabamba: una jornada de charlas, talleres y comunidad alrededor de Python, datos e inteligencia artificial.",
+    category: "Python Bolivia",
+    categoryIcon: <Code className="h-4 w-4" />,
+    categoryColor: "#0ea5e9",
+  },
+  {
+    id: 5,
+    title: "3 años de la Women Game Jam",
+    description: "Tres ediciones creando videojuegos junto a mujeres y diversidades: lo que aprendimos organizando, diseñando y construyendo comunidad.",
+    category: "Women Game Jam",
+    categoryIcon: <Gamepad2 className="h-4 w-4" />,
+    categoryColor: "#ec4899",
+  },
+  {
+    id: 6,
+    title: "Platzi AI Academy y los retos",
+    description: "Cómo viví los retos de Platzi AI Academy: aprendizaje práctico, proyectos con IA generativa y oportunidades para empezar en tecnología.",
+    category: "Platzi",
+    categoryIcon: <GraduationCap className="h-4 w-4" />,
+    categoryColor: "#22c55e",
   },
 ]
 
