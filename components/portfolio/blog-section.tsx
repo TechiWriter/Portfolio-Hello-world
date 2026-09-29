@@ -53,8 +53,10 @@ const blogPosts: BlogPost[] = [
     title: "PyDay Cochabamba",
     description: "Mi experiencia en el PyDay Cochabamba: una jornada de charlas, talleres y comunidad alrededor de Python, datos e inteligencia artificial.",
     category: "Python Bolivia",
-    categoryIcon: <Code className="h-4 w-4" />,
-    categoryColor: "#0ea5e9",
+  categoryIcon: <Code className="h-4 w-4" />,
+  categoryColor: "#0ea5e9",
+  image: "/images/pyday-cochabamba.jpg",
+  imageAlt: "Foto grupal de organizadores y asistentes del PyDay Cochabamba junto a banners de PyLadies y Python Cochabamba en la Universidad UCATEC",
   },
   {
     id: 5,
