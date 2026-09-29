@@ -17,25 +17,25 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Libros para creativos y marketers",
-    description: "Una colección de ideas, diseño y pensamiento estratégico para crear mejor contenido sin saturarse.",
-    category: "Conceptos",
+    title: "Orquestación de Agentes con arquetipos y frameworks en Kiro",
+    description: "En el Meet up de “Orquestación de agentes con arquetipos y frameworks de marketing y los llevamos al ecosistema de AWS.",
+    category: "AWS User Group",
     categoryIcon: <Lightbulb className="h-4 w-4" />,
     categoryColor: "#14b8a6",
   },
   {
     id: 2,
-    title: "Por qué la campaña de Duolingo funciona tan bien",
+    title: "Herramientas para el profesional del futuro",
     description: "Análisis del caos controlado: cómo el carácter del búho verde rompió todos los manuales de marca y ganó.",
-    category: "Reseñas de Campañas",
+    category: "AIESEC",
     categoryIcon: <TrendingUp className="h-4 w-4" />,
     categoryColor: "#06b6d4",
   },
   {
     id: 3,
-    title: "Cómo crear un tracker de contenido",
-    description: "La mayoría de los dashboards de Notion se abandonan en la primera semana. Aquí el sistema que me funciona.",
-    category: "Gadgets Notion",
+    title: "La falacia de la automatización",
+    description: "Se creía que la era de la #automatización liberaría a las personas para que puedan dedicarse a actividades como escribir poesía, componer música, dibujar y explorar otras formas de expresión artística.",
+    category: "Feria del Libro ",
     categoryIcon: <BookOpen className="h-4 w-4" />,
     categoryColor: "#7c3aed",
   },
@@ -132,7 +132,7 @@ export function BlogSection() {
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Recursos, análisis y herramientas para marketers curiosos y apasionados por aprender. Toca cualquier tarjeta para leer el artículo completo.
+            Capacitaciones, Meet Ups que realice. Y parte de mi experienci en el are de tecnologia y comunidades. 
           </p>
         </motion.div>
 

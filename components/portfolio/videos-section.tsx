@@ -177,11 +177,11 @@ export function VideosSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            My Latest <span className="font-serif italic text-primary">Videos</span>
+            Mis últimos <span className="font-serif italic text-primary">Videos</span>
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Sección in progress los iré subiendo muy pronto.
+            Sección in progress
           </p>
         </motion.div>
 

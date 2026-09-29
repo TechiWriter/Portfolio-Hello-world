@@ -139,11 +139,11 @@ export function CreatorDashboardSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Skill Deck <span className="font-serif italic text-primary">Creator</span>
+            Mi Stack <span className="font-serif italic text-primary">Creator</span>
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Construyo contenido híbrido que combina herramientas tradicionales con IAs Generativas. Si eres creador y learnaholic como yo, accede a descuentos y cursos de plataformas que he testeado rigurosamente.
+            Construyo contenido híbrido que combina herramientas tradicionales con IAs Generativas. Mi stack de habilidades y herramientas son enfocadas en estás áreas. 
           </p>
         </motion.div>
 

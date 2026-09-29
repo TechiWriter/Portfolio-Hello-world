@@ -213,7 +213,7 @@ export interface Video {
 export const videosData: Video[] = [
   {
     id: 1,
-    title: "Notion para marketer",
+    title: "Frameworks de Notion para Marketers",
     category: "Strategy",
     thumbnail: "/video-cover-1.jpg",
     youtubeUrl: "https://youtube.com",
@@ -231,7 +231,7 @@ export const videosData: Video[] = [
   },
   {
     id: 3,
-    title: "IA's Generativas",
+    title: "Libros para creativos y marketers",
     category: "Design",
     thumbnail: "/video-cover-3.jpg",
     youtubeUrl: "https://youtube.com",
