@@ -91,8 +91,8 @@ const blogPosts: BlogPost[] = [
   {
     id: 8,
     title: "Media Partner en el EMMS",
-    description: "Fui partner del EMMS, uno de los eventos globales de marketing online más grandes, patrocinado por Doppler y HubSpot.",
-    category: "EMMS",
+    description: "Ser partner oficial permitió regalar una asesoría y un curso creativo de Domestika a la comunidad.",
+    category: "EMMS Hostinger x Doppler",
     categoryIcon: <Sparkles className="h-4 w-4" />,
     categoryColor: "#f59e0b",
     image: "/images/emms-partners.png",
