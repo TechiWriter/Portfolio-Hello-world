@@ -233,7 +233,7 @@ export const videosData: Video[] = [
     id: 3,
     title: "Libros para creativos y marketers",
     category: "Design",
-    thumbnail: "/video-cover-3.jpg",
+    thumbnail: "/images/crisis-vs-cultura-creativa.jpg",
     youtubeUrl: "https://youtube.com",
     description: "Why some AIs are not suitable for copying and understanding natural language, while others create from scratch and have high-quality results.",
     color: "#c084fc",
