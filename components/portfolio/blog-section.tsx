@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import Image from "next/image"
+import NextImage from "next/image"
 import { motion, useInView } from "framer-motion"
 import { BookOpen, Lightbulb, TrendingUp, Sparkles, ExternalLink, Code, Gamepad2, GraduationCap, Users } from "lucide-react"
 import { WavyLine } from "./doodles"
@@ -122,7 +122,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
           {/* Icon area */}
           {post.image ? (
             <div className="relative overflow-hidden h-40">
-              <Image
+              <NextImage
                 src={post.image}
                 alt={post.imageAlt ?? post.title}
                 fill
