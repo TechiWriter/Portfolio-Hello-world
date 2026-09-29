@@ -59,8 +59,10 @@ const blogPosts: BlogPost[] = [
     title: "3 años de la Women Game Jam",
     description: "Tres ediciones creando videojuegos junto a mujeres y diversidades: lo que aprendimos organizando, diseñando y construyendo comunidad.",
     category: "Women Game Jam",
-    categoryIcon: <Gamepad2 className="h-4 w-4" />,
-    categoryColor: "#ec4899",
+  categoryIcon: <Gamepad2 className="h-4 w-4" />,
+  categoryColor: "#ec4899",
+  image: "/images/women-game-jam.jpg",
+  imageAlt: "Equipo organizador de la Women Game Jam con coronas de papel junto a vasos morados WGJ en la mesa de registro",
   },
   {
     id: 6,
