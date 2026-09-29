@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 import { BookOpen, Lightbulb, TrendingUp, Sparkles, ExternalLink } from "lucide-react"
 import { WavyLine } from "./doodles"
@@ -12,6 +13,8 @@ interface BlogPost {
   category: string
   categoryIcon: React.ReactNode
   categoryColor: string
+  image?: string
+  imageAlt?: string
 }
 
 const blogPosts: BlogPost[] = [
@@ -38,6 +41,8 @@ const blogPosts: BlogPost[] = [
     category: "Feria del Libro ",
     categoryIcon: <BookOpen className="h-4 w-4" />,
     categoryColor: "#7c3aed",
+    image: "/images/falacia-automatizacion.png",
+    imageAlt: "Presentando la charla La falacia de la automatización frente a una diapositiva que pregunta ¿Realidad?",
   },
 ]
 
@@ -71,16 +76,28 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
           </div>
 
           {/* Icon area */}
-          <div
-            className="relative overflow-hidden h-40 flex items-center justify-center p-4"
-            style={{
-              background: `linear-gradient(135deg, ${post.categoryColor}15 0%, ${post.categoryColor}05 100%)`,
-            }}
-          >
-            <div className="text-6xl" style={{ color: post.categoryColor }}>
-              {post.categoryIcon}
+          {post.image ? (
+            <div className="relative overflow-hidden h-40">
+              <Image
+                src={post.image}
+                alt={post.imageAlt ?? post.title}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
-          </div>
+          ) : (
+            <div
+              className="relative overflow-hidden h-40 flex items-center justify-center p-4"
+              style={{
+                background: `linear-gradient(135deg, ${post.categoryColor}15 0%, ${post.categoryColor}05 100%)`,
+              }}
+            >
+              <div className="text-6xl" style={{ color: post.categoryColor }}>
+                {post.categoryIcon}
+              </div>
+            </div>
+          )}
 
           {/* Content */}
           <div className="p-5 flex flex-col gap-3 flex-1">
