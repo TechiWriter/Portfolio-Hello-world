@@ -181,7 +181,7 @@ export function VideosSection() {
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Sección in progress
+            Analizo campañas, marcas y procesos creativos que admiro, desde Pixar hasta el K-pop, Videojuegos para aprender del marketing detrás.
           </p>
         </motion.div>
 
