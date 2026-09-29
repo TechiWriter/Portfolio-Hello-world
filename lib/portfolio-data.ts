@@ -238,4 +238,22 @@ export const videosData: Video[] = [
     description: "Why some AIs are not suitable for copying and understanding natural language, while others create from scratch and have high-quality results.",
     color: "#c084fc",
   },
+  {
+    id: 4,
+    title: "Marketing asiático y Noonpi",
+    category: "Marketing",
+    thumbnail: "/images/marketing-asiatico-noonpi.png",
+    youtubeUrl: "https://youtube.com",
+    description: "Cómo el marketing asiático y Noonpi conectan con su audiencia a través de personajes, estética y comunidad.",
+    color: "#7c3aed",
+  },
+  {
+    id: 5,
+    title: "NewJeans: marketing que se siente nuevo",
+    category: "Branding",
+    thumbnail: "/images/newjeans-marketing.png",
+    youtubeUrl: "https://youtube.com",
+    description: "Cómo mezcló nostalgia noventera y referencias japonesas para diferenciarse en el K-pop. Un análisis de su identidad creativa.",
+    color: "#a855f7",
+  },
 ]
