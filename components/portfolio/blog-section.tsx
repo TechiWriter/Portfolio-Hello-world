@@ -203,7 +203,7 @@ export function BlogSection() {
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
-            Capacitaciones, Meet Ups que realice. Y parte de mi experienci en el are de tecnologia y comunidades. 
+            Un espacio para compartir lo que aprendo construyendo en comunidad. 
           </p>
         </motion.div>
 
