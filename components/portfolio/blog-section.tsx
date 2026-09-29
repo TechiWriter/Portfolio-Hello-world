@@ -32,8 +32,10 @@ const blogPosts: BlogPost[] = [
     id: 2,
     title: "Herramientas para el profesional del futuro",
     description: "Análisis del caos controlado: cómo el carácter del búho verde rompió todos los manuales de marca y ganó.",
-    category: "AIESEC",
-    categoryIcon: <TrendingUp className="h-4 w-4" />,
+  image: "/images/herramientas-profesional.jpg",
+  imageAlt: "Charla Herramientas para el profesional del futuro ante estudiantes en el auditorio de la Universidad UCATEC con AIESEC",
+  category: "AIESEC",
+  categoryIcon: <TrendingUp className="h-4 w-4" />,
     categoryColor: "#06b6d4",
   },
   {
