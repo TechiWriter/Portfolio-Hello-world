@@ -9,7 +9,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono
 const _caveat = Caveat({ subsets: ["latin"], variable: "--font-caveat" })
 
 export const metadata: Metadata = {
-  title: "Hi creator ┊ Vanesa Paco",
+  title: "Hi creator ┊ Vanesa Paco Alvarez",
   description: "A creative portfolio with a scrapbook collage aesthetic, featuring illustration, character design, and graphic design work.",
   generator: "v0.app",
   icons: {
