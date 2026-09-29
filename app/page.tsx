@@ -16,8 +16,8 @@ export default function PortfolioPage() {
       <HeroSection />
       <AboutSection />
       <CreatorDashboardSection />
-      <VideosSection />
-      <BlogSection />
+        <BlogSection />
+        <VideosSection />
       <ContactSection />
       <Footer />
     </main>
