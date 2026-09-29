@@ -88,6 +88,16 @@ const blogPosts: BlogPost[] = [
     image: "/images/team-marketing.jpg",
     imageAlt: "Equipo de marketing de Digital Harbor haciendo gestos con las manos detrás de bolsas de regalo personalizadas",
   },
+  {
+    id: 8,
+    title: "Media Partner en el EMMS",
+    description: "Fui partner del EMMS, uno de los eventos globales de marketing online más grandes, patrocinado por Doppler y HubSpot.",
+    category: "EMMS",
+    categoryIcon: <Sparkles className="h-4 w-4" />,
+    categoryColor: "#f59e0b",
+    image: "/images/emms-partners.png",
+    imageAlt: "Sitio web del EMMS by Doppler mostrando la sección Media Partners Starters con los logos de los partners",
+  },
 ]
 
 function BlogCard({ post, index }: { post: BlogPost; index: number }) {
