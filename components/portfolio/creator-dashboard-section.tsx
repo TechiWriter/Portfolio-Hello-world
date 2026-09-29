@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
-import { Package, ExternalLink, Sparkles, Youtube, Award, Zap, Workflow, Video, Palette } from "lucide-react"
+import { Package, ExternalLink, Sparkles, Youtube, Award, Zap, Workflow, Video, Palette, PenLine } from "lucide-react"
 import { WavyLine, StarDoodle } from "./doodles"
 
 const rewards = [
@@ -55,6 +55,10 @@ const dominantAreas = [
   {
     name: "Video",
     icon: Video,
+  },
+  {
+    name: "Escritura",
+    icon: PenLine,
   },
   {
     name: "Diseño",
@@ -214,14 +218,14 @@ export function CreatorDashboardSection() {
                 </div>
                 <p className="text-xs text-muted-foreground mb-3">Para la gestión y creación de contenidos aplico diferentes herramientas que aplican estas áreas.</p>
 
-                {/* Areas Grid - 4 Columns */}
-                <div className="grid grid-cols-4 gap-3">
+                {/* Areas Grid - 5 Columns */}
+                <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
                   {dominantAreas.map((area) => {
                     const IconComponent = area.icon
                     return (
                       <div
                         key={area.name}
-                        className="flex flex-col items-center justify-center p-3 rounded-lg bg-secondary/30 hover:bg-primary/10 border border-primary/10 hover:border-primary/30 transition-all group text-center"
+                        className="flex flex-col items-center justify-center p-2 rounded-lg bg-secondary/30 hover:bg-primary/10 border border-primary/10 hover:border-primary/30 transition-all group text-center"
                       >
                         <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors mb-2">
                           <IconComponent className="h-4 w-4 text-primary" />
