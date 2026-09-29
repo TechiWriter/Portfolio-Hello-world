@@ -177,7 +177,7 @@ export function VideosSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Mis últimos <span className="font-serif italic text-primary">Videos</span>
+            Análisis <span className="font-serif italic text-primary">&amp; Tutoriales</span>
           </h2>
           <WavyLine className="mx-auto mt-3 text-primary/40" />
           <p className="mt-4 text-muted-foreground max-w-lg mx-auto">
